@@ -14,9 +14,13 @@ from src.people_detector.video_utils import process_video
 
 
 def parse_args():
+    """Парсит аргументы командной строки и возвращает Namespace."""
     parser = argparse.ArgumentParser(description="People detection in video")
+    # parser.add_argument(
+    #     "--input", "-i", required=True, help="Path to input video (e.g. crowd.mp4)"
+    # )
     parser.add_argument(
-        "--input", "-i", required=True, help="Path to input video (e.g. crowd.mp4)"
+        "--input", "-i", default="crowd.mp4", help="Path to input video (default: crowd.mp4)"
     )
     parser.add_argument(
         "--output",
@@ -47,6 +51,7 @@ def parse_args():
 
 
 def main():
+    """Точка входа: создаёт детектор и запускает обработку видео."""
     args = parse_args()
 
     input_path = Path(args.input)
