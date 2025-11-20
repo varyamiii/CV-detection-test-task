@@ -1,0 +1,27 @@
+*.pyc
+.vscode/
+outputs/
+crowd.mp4
+*.pth
+
+# Ignore inner repo
+lib/
+
+# Кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+**/__pycache__/
+
+# Виртуальные окружения
+.venv/
+env/
+.env/
+venv/
+# Секретные переменные
+.env
+*.env
+
+# Modelsss
+models/
