@@ -44,9 +44,9 @@ CV-detection-test-task/
 
 - **--output**, -o — путь для сохранения выходного видео
 
-    По умолчанию: outputs/result_2.mp4
+    По умолчанию: outputs/result.mp4
 
-    Пример: --output outputs/result.mp4
+    Пример: --output outputs/result_2.mp4
 
 - **--device**, -d — устройство для запуска модели: 'cpu' или 'cuda'
 
@@ -77,6 +77,21 @@ python main.py --input crowd.mp4 --output outputs/result.mp4 --confidence 0.5 --
 ```
 Запуск с использованием GPU (если PyTorch собран с поддержкой CUDA и драйверы установлены):
 ```bash
-python main.py --device cuda --input crowd.mp4 --output outputs/result_2.mp4 --confidence 0.6
+python main.py --device cuda --input crowd.mp4 --output outputs/result.mp4 --confidence 0.6
 ```
+# Установка зависимостей
+1) Рекомендуется создать и активировать виртуальное окружение:
+```bash
+python -m venv .venv
+# Linux 
+source .venv/bin/activate
+# Windows
+.venv\Scripts\Activate.ps1
+```
+2) Установите зависимости из requirements.txt:
+```bash
+pip install -r requirements.txt
+```
+**ВАЖНО про PyTorch и CUDA:**
 
+requirements.txt содержит общие зависимости (numpy, opencv-python, torchvision и т.д.), но PyTorch следует устанавливать с учётом вашей системы и версии CUDA, если хотите запускать проект с использование GPU. Если планируете использовать только CPU, то достаточно выполнить ```pip install -r requirements.txt```
